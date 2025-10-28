@@ -17,7 +17,7 @@ function Home() {
     <div className="m-5 ">Hello Nextjs 16
     <p className="px-10">{counter}</p>
     <br />
-    <button className="px-10 my-2 bg-blue-700 text-white" onClick={increaseCount}>Add</button>
+    <button className="px-10 my-3 bg-blue-700 text-white" onClick={increaseCount}>Add</button>
     <br />
     <button className="px-5 bg-red-700 text-white" onClick={decreaseCount}>Decrease</button>
     </div>
