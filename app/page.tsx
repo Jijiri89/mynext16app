@@ -20,6 +20,7 @@ function Home() {
     <button className="px-10 my-3 bg-blue-700 text-white" onClick={increaseCount}>Add</button>
     <br />
     <button className="px-5 bg-red-700 text-white" onClick={decreaseCount}>Decrease</button>
+    <input type="text" value={counter} onChange={(e) => setCounter(e.target.value)}/>
     </div>
    
   );
