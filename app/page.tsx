@@ -1,28 +1,28 @@
-'use client'
-import Image from "next/image";
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
 
-function Home() {
-  const [counter,setCounter]=useState(0);
-  const increaseCount=()=>{
-    setCounter(c=>c+1);
-  }
+export default function Page() {
+  const [counter, setCounter] = useState<number>(0);
 
-  const decreaseCount=()=>{
-   if(counter>0)
-     setCounter(c=>c-1);
-  }
+  const increaseCount = () => setCounter(c => c + 1);
+  const decreaseCount = () => setCounter(c => (c > 0 ? c - 1 : 0));
 
   return (
-    <div className="m-5 ">Hello Nextjs 16
-    <p className="px-10">{counter}</p>
-    <br />
-    <button className="px-10 my-3 bg-blue-700 text-white" onClick={increaseCount}>Add</button>
-    <br />
-    <button className="px-5 bg-red-700 text-white" onClick={decreaseCount}>Decrease</button>
-    <input type="text" value={counter} onChange={(e) => setCounter(e.target.value)}/>
+    <div className="p-5">
+      <h1>Counter: {counter}</h1>
+      <button className="px-5 bg-green-700 text-white mr-2" onClick={increaseCount}>
+        Increase
+      </button>
+      <button className="px-5 bg-red-700 text-white" onClick={decreaseCount}>
+        Decrease
+      </button>
+      <br />
+      <input
+        type="number"
+        value={counter}
+        onChange={(e) => setCounter(Number(e.target.value))}
+        className="mt-3 border p-2"
+      />
     </div>
-   
   );
 }
-export default Home;
